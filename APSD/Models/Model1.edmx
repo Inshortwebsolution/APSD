@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="APSD_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address_Tbl">
+          <Key>
+            <PropertyRef Name="Address_Id" />
+          </Key>
+          <Property Name="Address_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Country_Id" Type="int" />
+          <Property Name="State_Id" Type="int" />
+          <Property Name="District_Id" Type="int" />
+          <Property Name="PinCode" Type="int" />
+          <Property Name="Landmark" Type="varchar" MaxLength="250" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Course_Tbl">
+          <Key>
+            <PropertyRef Name="Course_Id" />
+          </Key>
+          <Property Name="Course_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Course_Name" Type="varchar" MaxLength="250" />
+          <Property Name="Course_Description" Type="varchar" MaxLength="500" />
+          <Property Name="Course_Duration_IN_Dates" Type="varchar" MaxLength="250" />
+          <Property Name="Course_Image" Type="varchar" MaxLength="250" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Designation_Tbl">
+          <Key>
+            <PropertyRef Name="Designation_Id" />
+          </Key>
+          <Property Name="Designation_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Des_Tittle" Type="varchar" MaxLength="250" />
+          <Property Name="Des_Description" Type="varchar" MaxLength="250" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Education_Tbl">
+          <Key>
+            <PropertyRef Name="Education_Id" />
+          </Key>
+          <Property Name="Education_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Table">
+          <Key>
+            <PropertyRef Name="Employee_Id" />
+          </Key>
+          <Property Name="Employee_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="250" />
+          <Property Name="Mobile" Type="int" />
+          <Property Name="Gender" Type="varchar" MaxLength="250" />
+          <Property Name="Designation_Id" Type="int" />
+          <Property Name="Sallery" Type="varchar" MaxLength="250" />
+          <Property Name="Address_Id" Type="int" />
+          <Property Name="Profile_Img" Type="varchar" MaxLength="250" />
+          <Property Name="Qualification_Id" Type="int" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event_Tbl">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Event_Tittle" Type="varchar" MaxLength="250" />
+          <Property Name="Event_Description" Type="varchar" MaxLength="500" />
+          <Property Name="Join_Date" Type="datetime" />
+          <Property Name="Exp_Date" Type="datetime" />
+          <Property Name="Start_Date" Type="datetime" />
+          <Property Name="End_Date" Type="datetime" />
+          <Property Name="Fee" Type="varchar" MaxLength="250" />
+          <Property Name="Total_Sheats" Type="varchar" MaxLength="250" />
+          <Property Name="Lectures" Type="varchar" MaxLength="250" />
+          <Property Name="Image" Type="varchar" MaxLength="250" />
+          <Property Name="Type" Type="varchar" MaxLength="250" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ISDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeedBack_Tbl">
+          <Key>
+            <PropertyRef Name="Feedback_Id" />
+          </Key>
+          <Property Name="Feedback_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Rating" Type="int" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gallery_Tbl">
+          <Key>
+            <PropertyRef Name="GalleryItemId" />
+          </Key>
+          <Property Name="GalleryItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gallery_Title" Type="varchar" MaxLength="250" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="File_Path" Type="varchar" MaxLength="500" />
+          <Property Name="File_Type" Type="varchar" MaxLength="250" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login_Tbl">
+          <Key>
+            <PropertyRef Name="Record_id" />
+          </Key>
+          <Property Name="Record_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="Password" Type="varchar" MaxLength="250" />
+          <Property Name="Type" Type="varchar" MaxLength="250" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Qualification_Tbl">
+          <Key>
+            <PropertyRef Name="Qualfication_Id" />
+          </Key>
+          <Property Name="Qualfication_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Education_Id" Type="int" />
+          <Property Name="Board" Type="varchar" MaxLength="250" />
+          <Property Name="Passing_Year" Type="varchar" MaxLength="250" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Student_Tbl">
+          <Key>
+            <PropertyRef Name="Student_Id" />
+          </Key>
+          <Property Name="Student_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Enrollment_Id" Type="int" />
+          <Property Name="Student_Name" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="250" />
+          <Property Name="Mobile" Type="int" />
+          <Property Name="College" Type="varchar" MaxLength="250" />
+          <Property Name="Branch" Type="varchar" MaxLength="250" />
+          <Property Name="Year" Type="varchar" MaxLength="250" />
+          <Property Name="Aadhaar" Type="varchar" MaxLength="250" />
+          <Property Name="Technologies_Id" Type="int" />
+          <Property Name="Registration_Fee" Type="varchar" MaxLength="250" />
+          <Property Name="Course_Id" Type="int" />
+          <Property Name="Program" Type="varchar" MaxLength="250" />
+          <Property Name="Address_ID" Type="int" />
+          <Property Name="Crd_Date" Type="datetime" />
+          <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+          <Property Name="Lmd_Date" Type="datetime" />
+          <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="APSD_DatabaseModelStoreContainer">
+          <EntitySet Name="Address_Tbl" EntityType="Self.Address_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course_Tbl" EntityType="Self.Course_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Designation_Tbl" EntityType="Self.Designation_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Education_Tbl" EntityType="Self.Education_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Table" EntityType="Self.Employee_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event_Tbl" EntityType="Self.Event_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FeedBack_Tbl" EntityType="Self.FeedBack_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gallery_Tbl" EntityType="Self.Gallery_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Tbl" EntityType="Self.Login_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Qualification_Tbl" EntityType="Self.Qualification_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student_Tbl" EntityType="Self.Student_Tbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="APSD_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address_Tbl">
+          <Key>
+            <PropertyRef Name="Address_Id" />
+          </Key>
+          <Property Name="Address_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country_Id" Type="Int32" />
+          <Property Name="State_Id" Type="Int32" />
+          <Property Name="District_Id" Type="Int32" />
+          <Property Name="PinCode" Type="Int32" />
+          <Property Name="Landmark" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Course_Tbl">
+          <Key>
+            <PropertyRef Name="Course_Id" />
+          </Key>
+          <Property Name="Course_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Course_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Course_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Course_Duration_IN_Dates" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Course_Image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Designation_Tbl">
+          <Key>
+            <PropertyRef Name="Designation_Id" />
+          </Key>
+          <Property Name="Designation_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Des_Tittle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Des_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Education_Tbl">
+          <Key>
+            <PropertyRef Name="Education_Id" />
+          </Key>
+          <Property Name="Education_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Table">
+          <Key>
+            <PropertyRef Name="Employee_Id" />
+          </Key>
+          <Property Name="Employee_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Designation_Id" Type="Int32" />
+          <Property Name="Sallery" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Id" Type="Int32" />
+          <Property Name="Profile_Img" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Qualification_Id" Type="Int32" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event_Tbl">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Event_Tittle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Event_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Join_Date" Type="DateTime" Precision="3" />
+          <Property Name="Exp_Date" Type="DateTime" Precision="3" />
+          <Property Name="Start_Date" Type="DateTime" Precision="3" />
+          <Property Name="End_Date" Type="DateTime" Precision="3" />
+          <Property Name="Fee" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Sheats" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lectures" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ISDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeedBack_Tbl">
+          <Key>
+            <PropertyRef Name="Feedback_Id" />
+          </Key>
+          <Property Name="Feedback_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Rating" Type="Int32" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gallery_Tbl">
+          <Key>
+            <PropertyRef Name="GalleryItemId" />
+          </Key>
+          <Property Name="GalleryItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gallery_Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="File_Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="File_Type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login_Tbl">
+          <Key>
+            <PropertyRef Name="Record_id" />
+          </Key>
+          <Property Name="Record_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Qualification_Tbl">
+          <Key>
+            <PropertyRef Name="Qualfication_Id" />
+          </Key>
+          <Property Name="Qualfication_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Education_Id" Type="Int32" />
+          <Property Name="Board" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Passing_Year" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Student_Tbl">
+          <Key>
+            <PropertyRef Name="Student_Id" />
+          </Key>
+          <Property Name="Student_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Enrollment_Id" Type="Int32" />
+          <Property Name="Student_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="Int32" />
+          <Property Name="College" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Branch" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Aadhaar" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Technologies_Id" Type="Int32" />
+          <Property Name="Registration_Fee" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Course_Id" Type="Int32" />
+          <Property Name="Program" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Address_ID" Type="Int32" />
+          <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+          <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="APSD_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Address_Tbl" EntityType="Self.Address_Tbl" />
+          <EntitySet Name="Course_Tbl" EntityType="Self.Course_Tbl" />
+          <EntitySet Name="Designation_Tbl" EntityType="Self.Designation_Tbl" />
+          <EntitySet Name="Education_Tbl" EntityType="Self.Education_Tbl" />
+          <EntitySet Name="Employee_Table" EntityType="Self.Employee_Table" />
+          <EntitySet Name="Event_Tbl" EntityType="Self.Event_Tbl" />
+          <EntitySet Name="FeedBack_Tbl" EntityType="Self.FeedBack_Tbl" />
+          <EntitySet Name="Gallery_Tbl" EntityType="Self.Gallery_Tbl" />
+          <EntitySet Name="Login_Tbl" EntityType="Self.Login_Tbl" />
+          <EntitySet Name="Qualification_Tbl" EntityType="Self.Qualification_Tbl" />
+          <EntitySet Name="Student_Tbl" EntityType="Self.Student_Tbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="APSD_DatabaseModelStoreContainer" CdmEntityContainer="APSD_DatabaseEntities">
+          <EntitySetMapping Name="Address_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Address_Tbl">
+              <MappingFragment StoreEntitySet="Address_Tbl">
+                <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+                <ScalarProperty Name="State_Id" ColumnName="State_Id" />
+                <ScalarProperty Name="District_Id" ColumnName="District_Id" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Course_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Course_Tbl">
+              <MappingFragment StoreEntitySet="Course_Tbl">
+                <ScalarProperty Name="Course_Id" ColumnName="Course_Id" />
+                <ScalarProperty Name="Course_Name" ColumnName="Course_Name" />
+                <ScalarProperty Name="Course_Description" ColumnName="Course_Description" />
+                <ScalarProperty Name="Course_Duration_IN_Dates" ColumnName="Course_Duration_IN_Dates" />
+                <ScalarProperty Name="Course_Image" ColumnName="Course_Image" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designation_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Designation_Tbl">
+              <MappingFragment StoreEntitySet="Designation_Tbl">
+                <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+                <ScalarProperty Name="Des_Tittle" ColumnName="Des_Tittle" />
+                <ScalarProperty Name="Des_Description" ColumnName="Des_Description" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Education_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Education_Tbl">
+              <MappingFragment StoreEntitySet="Education_Tbl">
+                <ScalarProperty Name="Education_Id" ColumnName="Education_Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Table">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Employee_Table">
+              <MappingFragment StoreEntitySet="Employee_Table">
+                <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+                <ScalarProperty Name="Sallery" ColumnName="Sallery" />
+                <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+                <ScalarProperty Name="Profile_Img" ColumnName="Profile_Img" />
+                <ScalarProperty Name="Qualification_Id" ColumnName="Qualification_Id" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Event_Tbl">
+              <MappingFragment StoreEntitySet="Event_Tbl">
+                <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+                <ScalarProperty Name="Event_Tittle" ColumnName="Event_Tittle" />
+                <ScalarProperty Name="Event_Description" ColumnName="Event_Description" />
+                <ScalarProperty Name="Join_Date" ColumnName="Join_Date" />
+                <ScalarProperty Name="Exp_Date" ColumnName="Exp_Date" />
+                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+                <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="Total_Sheats" ColumnName="Total_Sheats" />
+                <ScalarProperty Name="Lectures" ColumnName="Lectures" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ISDeleted" ColumnName="ISDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeedBack_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.FeedBack_Tbl">
+              <MappingFragment StoreEntitySet="FeedBack_Tbl">
+                <ScalarProperty Name="Feedback_Id" ColumnName="Feedback_Id" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gallery_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Gallery_Tbl">
+              <MappingFragment StoreEntitySet="Gallery_Tbl">
+                <ScalarProperty Name="GalleryItemId" ColumnName="GalleryItemId" />
+                <ScalarProperty Name="Gallery_Title" ColumnName="Gallery_Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="File_Path" ColumnName="File_Path" />
+                <ScalarProperty Name="File_Type" ColumnName="File_Type" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Login_Tbl">
+              <MappingFragment StoreEntitySet="Login_Tbl">
+                <ScalarProperty Name="Record_id" ColumnName="Record_id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Qualification_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Qualification_Tbl">
+              <MappingFragment StoreEntitySet="Qualification_Tbl">
+                <ScalarProperty Name="Qualfication_Id" ColumnName="Qualfication_Id" />
+                <ScalarProperty Name="Education_Id" ColumnName="Education_Id" />
+                <ScalarProperty Name="Board" ColumnName="Board" />
+                <ScalarProperty Name="Passing_Year" ColumnName="Passing_Year" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student_Tbl">
+            <EntityTypeMapping TypeName="APSD_DatabaseModel.Student_Tbl">
+              <MappingFragment StoreEntitySet="Student_Tbl">
+                <ScalarProperty Name="Student_Id" ColumnName="Student_Id" />
+                <ScalarProperty Name="Enrollment_Id" ColumnName="Enrollment_Id" />
+                <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="College" ColumnName="College" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Aadhaar" ColumnName="Aadhaar" />
+                <ScalarProperty Name="Technologies_Id" ColumnName="Technologies_Id" />
+                <ScalarProperty Name="Registration_Fee" ColumnName="Registration_Fee" />
+                <ScalarProperty Name="Course_Id" ColumnName="Course_Id" />
+                <ScalarProperty Name="Program" ColumnName="Program" />
+                <ScalarProperty Name="Address_ID" ColumnName="Address_ID" />
+                <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+                <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+                <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+                <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
