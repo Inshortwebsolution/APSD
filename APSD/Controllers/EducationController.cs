@@ -11,107 +11,108 @@ using APSD.Reposetries;
 
 namespace APSD.Controllers
 {
-    public class GalleryController : Controller
+    public class EducationController : Controller
     {
-        IUploadeVideo _videoupload=new UploadeVideo();
-        // GET: Gallery
+        IEducation _education=new Education();
 
+        // GET: Education
         public ActionResult Index()
         {
-            List<Gallery_Tbl> list = _videoupload.GetAll();
+            List<Education_Tbl> list = _education.GetAll();
             return View(list);
         }
 
-        // POST: Gallery_Tbl/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Gallery_Title,Description,File_Path,File_Type,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] Gallery_Tbl gallery_Tbl)
-        {
-            if (ModelState.IsValid)
-            {
-                bool res = _videoupload.SaveData(gallery_Tbl);
-
-                return RedirectToAction("Index");
-            }
-
-            return View(gallery_Tbl);
-        }
-
-        // GET: Gallery/Details/5
+        // GET: Education/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery_Tbl gallery_Tbl = _videoupload.GetDataByID(id);
-            if (gallery_Tbl == null)
+            Education_Tbl education_Tbl = _education.GetDataByID(id);
+            if (education_Tbl == null)
             {
                 return HttpNotFound();
             }
-            return View(gallery_Tbl);
+            return View(education_Tbl);
         }
 
-        // GET: Gallery/Create
+        // GET: Education/Create
         public ActionResult Create()
         {
             return View();
         }
 
-      
-        // GET: Gallery/Edit/5
+        // POST: Education/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Education_Id,Title,Description,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] Education_Tbl education_Tbl)
+        {
+            if (ModelState.IsValid)
+            {
+                bool res = _education.SaveData(education_Tbl);
+                
+                return RedirectToAction("Index");
+            }
+
+            return View(education_Tbl);
+        }
+
+        // GET: Education/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery_Tbl gallery_Tbl = _videoupload.GetDataByID(id);
-            if (gallery_Tbl == null)
+            Education_Tbl education_Tbl = _education.GetDataByID(id);
+            if (education_Tbl == null)
             {
                 return HttpNotFound();
             }
-            return View(gallery_Tbl);
+            return View(education_Tbl);
         }
 
-        // POST: Gallery/Edit/5
+        // POST: Education/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Gallery_Title,Description,File_Path,File_Type,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted,GalleryItemId")] Gallery_Tbl gallery_Tbl)
+        public ActionResult Edit([Bind(Include = "Education_Id,Title,Description,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] Education_Tbl education_Tbl)
         {
             if (ModelState.IsValid)
             {
-                bool res = _videoupload.Edit(gallery_Tbl);
+                bool res = _education.EditData(education_Tbl);
+                
                 return RedirectToAction("Index");
             }
-            return View(gallery_Tbl);
+            return View(education_Tbl);
         }
 
-        // GET: Gallery/Delete/5
+        // GET: Education/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery_Tbl gallery_Tbl = _videoupload.GetDataByID(id);
-            if (gallery_Tbl == null)
+            Education_Tbl education_Tbl = _education.GetDataByID(id);
+            if (education_Tbl == null)
             {
                 return HttpNotFound();
             }
-            return View(gallery_Tbl);
+            return View(education_Tbl);
         }
 
-        // POST: Gallery/Delete/5
+        // POST: Education/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int? id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            int res = _videoupload.DeleteData(id);
+            int res = _education.DeleteData(id);
+            
             return RedirectToAction("Index");
         }
 

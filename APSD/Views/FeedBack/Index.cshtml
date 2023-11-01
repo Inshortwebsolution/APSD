@@ -1,4 +1,4 @@
-﻿@model IEnumerable<APSD.Models.Gallery_Tbl>
+﻿@model IEnumerable<APSD.Models.FeedBack_Tbl>
 
 @{
     ViewBag.Title = "Index";
@@ -12,16 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Gallery_Title)
+            @Html.DisplayNameFor(model => model.User_ID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.File_Path)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.File_Type)
+            @Html.DisplayNameFor(model => model.Rating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Crd_Date)
@@ -47,16 +44,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Gallery_Title)
+            @Html.DisplayFor(modelItem => item.User_ID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.File_Path)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.File_Type)
+            @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Crd_Date)
@@ -77,9 +71,9 @@
             @Html.DisplayFor(modelItem => item.IsDeleted)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.GalleryItemId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.GalleryItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.GalleryItemId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Feedback_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Feedback_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Feedback_Id })
         </td>
     </tr>
 }

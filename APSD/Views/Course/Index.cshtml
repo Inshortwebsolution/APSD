@@ -1,4 +1,4 @@
-﻿@model IEnumerable<APSD.Models.Gallery_Tbl>
+﻿@model IEnumerable<APSD.Models.Course_Tbl>
 
 @{
     ViewBag.Title = "Index";
@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Gallery_Title)
+            @Html.DisplayNameFor(model => model.Course_Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Course_Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.File_Path)
+            @Html.DisplayNameFor(model => model.Course_Duration_IN_Dates)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.File_Type)
+            @Html.DisplayNameFor(model => model.Course_Image)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Crd_Date)
@@ -47,16 +47,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Gallery_Title)
+            @Html.DisplayFor(modelItem => item.Course_Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.Course_Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.File_Path)
+            @Html.DisplayFor(modelItem => item.Course_Duration_IN_Dates)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.File_Type)
+            @Html.DisplayFor(modelItem => item.Course_Image)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Crd_Date)
@@ -77,9 +77,9 @@
             @Html.DisplayFor(modelItem => item.IsDeleted)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.GalleryItemId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.GalleryItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.GalleryItemId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Course_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Course_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Course_Id })
         </td>
     </tr>
 }

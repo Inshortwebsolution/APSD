@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\APSD",
+    "\\APSD\\Content\\Sql"
   ],
-  "SelectedNode": "\\APSD.sln",
+  "SelectedNode": "\\APSD\\Models",
   "PreviewInSolutionExplorer": false
 }

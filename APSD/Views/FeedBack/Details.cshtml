@@ -1,4 +1,4 @@
-﻿@model APSD.Models.Gallery_Tbl
+﻿@model APSD.Models.FeedBack_Tbl
 
 @{
     ViewBag.Title = "Details";
@@ -7,15 +7,15 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Gallery_Tbl</h4>
+    <h4>FeedBack_Tbl</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Gallery_Title)
+            @Html.DisplayNameFor(model => model.User_ID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Gallery_Title)
+            @Html.DisplayFor(model => model.User_ID)
         </dd>
 
         <dt>
@@ -27,19 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.File_Path)
+            @Html.DisplayNameFor(model => model.Rating)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.File_Path)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.File_Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.File_Type)
+            @Html.DisplayFor(model => model.Rating)
         </dd>
 
         <dt>
@@ -74,9 +66,25 @@
             @Html.DisplayFor(model => model.Lmd_By)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.GalleryItemId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Feedback_Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

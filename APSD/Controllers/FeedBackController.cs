@@ -11,107 +11,105 @@ using APSD.Reposetries;
 
 namespace APSD.Controllers
 {
-    public class GalleryController : Controller
+    public class FeedBackController : Controller
     {
-        IUploadeVideo _videoupload=new UploadeVideo();
-        // GET: Gallery
+        IFeedBack _feedback = new FeedBack();
 
+        // GET: FeedBack
         public ActionResult Index()
         {
-            List<Gallery_Tbl> list = _videoupload.GetAll();
+            List<FeedBack_Tbl> list = _feedback.GetAll();
             return View(list);
         }
 
-        // POST: Gallery_Tbl/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Gallery_Title,Description,File_Path,File_Type,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] Gallery_Tbl gallery_Tbl)
-        {
-            if (ModelState.IsValid)
-            {
-                bool res = _videoupload.SaveData(gallery_Tbl);
-
-                return RedirectToAction("Index");
-            }
-
-            return View(gallery_Tbl);
-        }
-
-        // GET: Gallery/Details/5
+        // GET: FeedBack/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery_Tbl gallery_Tbl = _videoupload.GetDataByID(id);
-            if (gallery_Tbl == null)
+            FeedBack_Tbl feedBack_Tbl = _feedback.GetDataByID(id);
+            if (feedBack_Tbl == null)
             {
                 return HttpNotFound();
             }
-            return View(gallery_Tbl);
+            return View(feedBack_Tbl);
         }
 
-        // GET: Gallery/Create
+        // GET: FeedBack/Create
         public ActionResult Create()
         {
             return View();
         }
 
-      
-        // GET: Gallery/Edit/5
+        // POST: FeedBack/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Feedback_Id,User_ID,Description,Rating,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] FeedBack_Tbl feedBack_Tbl)
+        {
+            if (ModelState.IsValid)
+            {
+                bool res = _feedback.SaveData(feedBack_Tbl);
+                return RedirectToAction("Index");
+            }
+
+            return View(feedBack_Tbl);
+        }
+
+        // GET: FeedBack/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery_Tbl gallery_Tbl = _videoupload.GetDataByID(id);
-            if (gallery_Tbl == null)
+            FeedBack_Tbl feedBack_Tbl = _feedback.GetDataByID(id);
+            if (feedBack_Tbl == null)
             {
                 return HttpNotFound();
             }
-            return View(gallery_Tbl);
+            return View(feedBack_Tbl);
         }
 
-        // POST: Gallery/Edit/5
+        // POST: FeedBack/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Gallery_Title,Description,File_Path,File_Type,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted,GalleryItemId")] Gallery_Tbl gallery_Tbl)
+        public ActionResult Edit([Bind(Include = "Feedback_Id,User_ID,Description,Rating,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] FeedBack_Tbl feedBack_Tbl)
         {
             if (ModelState.IsValid)
             {
-                bool res = _videoupload.Edit(gallery_Tbl);
+                bool res=_feedback.EditData(feedBack_Tbl);
                 return RedirectToAction("Index");
             }
-            return View(gallery_Tbl);
+            return View(feedBack_Tbl);
         }
 
-        // GET: Gallery/Delete/5
+        // GET: FeedBack/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery_Tbl gallery_Tbl = _videoupload.GetDataByID(id);
-            if (gallery_Tbl == null)
+            FeedBack_Tbl feedBack_Tbl = _feedback.GetDataByID(id);
+            if (feedBack_Tbl == null)
             {
                 return HttpNotFound();
             }
-            return View(gallery_Tbl);
+            return View(feedBack_Tbl);
         }
 
-        // POST: Gallery/Delete/5
+        // POST: FeedBack/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int? id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            int res = _videoupload.DeleteData(id);
+            int res=_feedback.DeleteData(id);
             return RedirectToAction("Index");
         }
 
