@@ -1,6 +1,7 @@
 ﻿using APSD.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -40,5 +41,30 @@ namespace APSD.Reposetries
             return n;
         
         }
+
+        public bool EditData(Gallery_Tbl gallery_Tbl)
+        {
+            bool n=false;
+            try
+            {
+                //gallery_Tbl.Crd_Date = DateTime.Now;
+                //gallery_Tbl.Lmd_Date = DateTime.Now;
+                //gallery_Tbl.Crd_By = "1";
+                //gallery_Tbl.Lmd_By = "1";
+                //gallery_Tbl.IsActive = true;
+                //gallery_Tbl.IsDeleted = false;
+                db.Entry(gallery_Tbl).State = EntityState.Modified;
+                db.SaveChanges();
+                n=true;
+                return n;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return n;
+        }
+
     }
 }

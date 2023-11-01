@@ -11,5 +11,7 @@ namespace APSD.Reposetries
     {
         List<Gallery_Tbl> GetAll();
         bool SaveData(Gallery_Tbl gallery_Tbl);
+
+        bool EditData(Gallery_Tbl gallery_Tbl);
     }
 }
