@@ -132,10 +132,15 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\FeedBackController.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
+    <Compile Include="Controllers\DesignationController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QualificationController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,9 +201,19 @@
     <Compile Include="Reposetries\IFeedBack.cs" />
     <Compile Include="Reposetries\IQualification.cs" />
     <Compile Include="Reposetries\IStudent.cs" />
+    <Compile Include="Reposetries\Address.cs" />
+    <Compile Include="Reposetries\Designation.cs" />
+    <Compile Include="Reposetries\Employee.cs" />
+    <Compile Include="Reposetries\Event.cs" />
+    <Compile Include="Reposetries\IAddress.cs" />
+    <Compile Include="Reposetries\IDesignation.cs" />
+    <Compile Include="Reposetries\IEmployee.cs" />
+    <Compile Include="Reposetries\IEvent.cs" />
+    <Compile Include="Reposetries\ILogin.cs" />
     <Compile Include="Reposetries\IUploadeVideo.cs" />
     <Compile Include="Reposetries\Qualification.cs" />
     <Compile Include="Reposetries\Student.cs" />
+    <Compile Include="Reposetries\Login.cs" />
     <Compile Include="Reposetries\UploadeVideo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +299,31 @@
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\Delete.cshtml" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Address\Create.cshtml" />
+    <Content Include="Views\Address\Delete.cshtml" />
+    <Content Include="Views\Address\Details.cshtml" />
+    <Content Include="Views\Address\Edit.cshtml" />
+    <Content Include="Views\Address\Index.cshtml" />
+    <Content Include="Views\Designation\Create.cshtml" />
+    <Content Include="Views\Designation\Delete.cshtml" />
+    <Content Include="Views\Designation\Details.cshtml" />
+    <Content Include="Views\Designation\Edit.cshtml" />
+    <Content Include="Views\Designation\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
+    <Content Include="Views\Login\Delete.cshtml" />
+    <Content Include="Views\Login\Details.cshtml" />
+    <Content Include="Views\Login\Edit.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
