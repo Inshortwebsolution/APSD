@@ -1,0 +1,141 @@
+﻿@model IEnumerable<APSD.Models.Student_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Enrollment_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.College)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Branch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aadhaar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Technologies_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registration_Fee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Program)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Crd_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Crd_By)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lmd_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lmd_By)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Enrollment_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.College)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Branch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aadhaar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Technologies_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registration_Fee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Program)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Crd_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Crd_By)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lmd_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lmd_By)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Student_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Student_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Student_Id })
+        </td>
+    </tr>
+}
+
+</table>
