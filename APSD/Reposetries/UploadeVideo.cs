@@ -1,7 +1,9 @@
 ﻿using APSD.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 
 namespace APSD.Reposetries
@@ -40,5 +42,49 @@ namespace APSD.Reposetries
             return n;
         
         }
+        public bool Edit(Gallery_Tbl gallery_Tbl)
+        {
+            bool n=false;
+            try
+            {
+                db.Entry(gallery_Tbl).State = EntityState.Modified;
+                db.SaveChanges();
+                n=true;
+                return n;
+            }
+            catch (Exception) 
+            {
+                throw;
+            }    
+            return n;
+        }
+
+        public int DeleteData(int? id)
+        {
+            int n = 0;
+            try
+            {
+                Gallery_Tbl gallery_Tbl = db.Gallery_Tbl.Find(id);
+                db.Gallery_Tbl.Remove(gallery_Tbl);
+                db.SaveChanges();
+                n = 1;
+                return n;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return n;
+        }
+
+        public Gallery_Tbl GetDataByID(int? id)
+        {
+
+            return db.Gallery_Tbl.Find(id);
+        }
+        
+
     }
 }

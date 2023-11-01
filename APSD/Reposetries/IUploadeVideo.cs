@@ -11,5 +11,11 @@ namespace APSD.Reposetries
     {
         List<Gallery_Tbl> GetAll();
         bool SaveData(Gallery_Tbl gallery_Tbl);
+        bool Edit(Gallery_Tbl gallery_Tbl);
+        int DeleteData(int? id);
+        Gallery_Tbl GetDataByID(int? id);
+        //bool Delete(Gallery_Tbl gallery_Tbl);
+
+
     }
 }
