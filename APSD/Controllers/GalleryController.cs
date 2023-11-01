@@ -85,7 +85,7 @@ namespace APSD.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool res = _videoupload.Edit(gallery_Tbl);
+                bool res = _videoupload.EditData(gallery_Tbl);
                 return RedirectToAction("Index");
             }
             return View(gallery_Tbl);

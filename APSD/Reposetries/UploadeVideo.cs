@@ -66,5 +66,27 @@ namespace APSD.Reposetries
             return n;
         }
 
+        public Gallery_Tbl GetDataByID(int? id)
+        {
+            return db.Gallery_Tbl.Find(id);
+        }
+
+        public int DeleteData(int? id)
+        {
+            int n = 0;
+            try
+            {
+                Gallery_Tbl gallery_Tbl = db.Gallery_Tbl.Find(id);
+                db.Gallery_Tbl.Remove(gallery_Tbl);
+                db.SaveChanges();
+                n = 1;
+                return n;
+            }
+            catch (Exception)
+            { 
+                throw; 
+            }    
+            return n;
+        }
     }
 }
