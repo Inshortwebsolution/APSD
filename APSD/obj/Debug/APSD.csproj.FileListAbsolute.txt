@@ -81,3 +81,7 @@ C:\Users\patwa\Source\Repos\APSD\APSD\bin\Microsoft.CodeDom.Providers.DotNetComp
 C:\Users\patwa\Source\Repos\APSD\APSD\obj\Debug\APSD.csproj.CopyComplete
 C:\Users\patwa\Source\Repos\APSD\APSD\obj\Debug\APSD.dll
 C:\Users\patwa\Source\Repos\APSD\APSD\obj\Debug\APSD.pdb
+C:\Users\hp\source\repos\APSD\APSD\obj\Debug\APSD.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\APSD\APSD\obj\Debug\APSD.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\APSD\APSD\obj\Debug\APSD.dll
+C:\Users\hp\source\repos\APSD\APSD\obj\Debug\APSD.pdb
