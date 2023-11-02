@@ -73,7 +73,7 @@
           <Property Name="Employee_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="250" />
           <Property Name="Email" Type="varchar" MaxLength="250" />
-          <Property Name="Mobile" Type="int" />
+          <Property Name="Mobile" Type="bigint" />
           <Property Name="Gender" Type="varchar" MaxLength="250" />
           <Property Name="Designation_Id" Type="int" />
           <Property Name="Sallery" Type="varchar" MaxLength="250" />
@@ -197,6 +197,16 @@
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
+        <Function Name="EduProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Education_Id" Type="int" Mode="In" />
+          <Parameter Name="queryfor" Type="varchar(max)" Mode="In" />
+          <Parameter Name="title" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="crd_by" Type="varchar" Mode="In" />
+          <Parameter Name="lmd_by" Type="varchar" Mode="In" />
+          <Parameter Name="is_active" Type="bit" Mode="In" />
+          <Parameter Name="is_deleted" Type="bit" Mode="In" />
+        </Function>
         <EntityContainer Name="APSD_DatabaseModelStoreContainer">
           <EntitySet Name="Address_Tbl" EntityType="Self.Address_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Course_Tbl" EntityType="Self.Course_Tbl" Schema="dbo" store:Type="Tables" />
@@ -283,7 +293,7 @@
           <Property Name="Employee_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Mobile" Type="Int32" />
+          <Property Name="Mobile" Type="Int64" />
           <Property Name="Gender" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="Designation_Id" Type="Int32" />
           <Property Name="Sallery" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
@@ -419,6 +429,16 @@
           <EntitySet Name="Login_Tbl" EntityType="Self.Login_Tbl" />
           <EntitySet Name="Qualification_Tbl" EntityType="Self.Qualification_Tbl" />
           <EntitySet Name="Student_Tbl" EntityType="Self.Student_Tbl" />
+          <FunctionImport Name="EduProc">
+            <Parameter Name="Education_Id" Mode="In" Type="Int32" />
+            <Parameter Name="queryfor" Mode="In" Type="String" />
+            <Parameter Name="title" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="crd_by" Mode="In" Type="String" />
+            <Parameter Name="lmd_by" Mode="In" Type="String" />
+            <Parameter Name="is_active" Mode="In" Type="Boolean" />
+            <Parameter Name="is_deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -629,6 +649,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="EduProc" FunctionName="APSD_DatabaseModel.Store.EduProc" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
