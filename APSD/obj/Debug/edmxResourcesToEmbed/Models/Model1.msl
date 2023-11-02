@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APSD_DatabaseModelStoreContainer" CdmEntityContainer="APSD_DatabaseEntities">
+    <EntitySetMapping Name="Address_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Address_Tbl">
+        <MappingFragment StoreEntitySet="Address_Tbl">
+          <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+          <ScalarProperty Name="State_Id" ColumnName="State_Id" />
+          <ScalarProperty Name="District_Id" ColumnName="District_Id" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Course_Tbl">
+        <MappingFragment StoreEntitySet="Course_Tbl">
+          <ScalarProperty Name="Course_Id" ColumnName="Course_Id" />
+          <ScalarProperty Name="Course_Name" ColumnName="Course_Name" />
+          <ScalarProperty Name="Course_Description" ColumnName="Course_Description" />
+          <ScalarProperty Name="Course_Duration_IN_Dates" ColumnName="Course_Duration_IN_Dates" />
+          <ScalarProperty Name="Course_Image" ColumnName="Course_Image" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designation_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Designation_Tbl">
+        <MappingFragment StoreEntitySet="Designation_Tbl">
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+          <ScalarProperty Name="Des_Tittle" ColumnName="Des_Tittle" />
+          <ScalarProperty Name="Des_Description" ColumnName="Des_Description" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Education_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Education_Tbl">
+        <MappingFragment StoreEntitySet="Education_Tbl">
+          <ScalarProperty Name="Education_Id" ColumnName="Education_Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Table">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Employee_Table">
+        <MappingFragment StoreEntitySet="Employee_Table">
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+          <ScalarProperty Name="Sallery" ColumnName="Sallery" />
+          <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+          <ScalarProperty Name="Profile_Img" ColumnName="Profile_Img" />
+          <ScalarProperty Name="Qualification_Id" ColumnName="Qualification_Id" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Event_Tbl">
+        <MappingFragment StoreEntitySet="Event_Tbl">
+          <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+          <ScalarProperty Name="Event_Tittle" ColumnName="Event_Tittle" />
+          <ScalarProperty Name="Event_Description" ColumnName="Event_Description" />
+          <ScalarProperty Name="Join_Date" ColumnName="Join_Date" />
+          <ScalarProperty Name="Exp_Date" ColumnName="Exp_Date" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="Total_Sheats" ColumnName="Total_Sheats" />
+          <ScalarProperty Name="Lectures" ColumnName="Lectures" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ISDeleted" ColumnName="ISDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBack_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.FeedBack_Tbl">
+        <MappingFragment StoreEntitySet="FeedBack_Tbl">
+          <ScalarProperty Name="Feedback_Id" ColumnName="Feedback_Id" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gallery_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Gallery_Tbl">
+        <MappingFragment StoreEntitySet="Gallery_Tbl">
+          <ScalarProperty Name="GalleryItemId" ColumnName="GalleryItemId" />
+          <ScalarProperty Name="Gallery_Title" ColumnName="Gallery_Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="File_Path" ColumnName="File_Path" />
+          <ScalarProperty Name="File_Type" ColumnName="File_Type" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Login_Tbl">
+        <MappingFragment StoreEntitySet="Login_Tbl">
+          <ScalarProperty Name="Record_id" ColumnName="Record_id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Qualification_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Qualification_Tbl">
+        <MappingFragment StoreEntitySet="Qualification_Tbl">
+          <ScalarProperty Name="Qualfication_Id" ColumnName="Qualfication_Id" />
+          <ScalarProperty Name="Education_Id" ColumnName="Education_Id" />
+          <ScalarProperty Name="Board" ColumnName="Board" />
+          <ScalarProperty Name="Passing_Year" ColumnName="Passing_Year" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Tbl">
+      <EntityTypeMapping TypeName="APSD_DatabaseModel.Student_Tbl">
+        <MappingFragment StoreEntitySet="Student_Tbl">
+          <ScalarProperty Name="Student_Id" ColumnName="Student_Id" />
+          <ScalarProperty Name="Enrollment_Id" ColumnName="Enrollment_Id" />
+          <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="College" ColumnName="College" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Aadhaar" ColumnName="Aadhaar" />
+          <ScalarProperty Name="Technologies_Id" ColumnName="Technologies_Id" />
+          <ScalarProperty Name="Registration_Fee" ColumnName="Registration_Fee" />
+          <ScalarProperty Name="Course_Id" ColumnName="Course_Id" />
+          <ScalarProperty Name="Program" ColumnName="Program" />
+          <ScalarProperty Name="Address_ID" ColumnName="Address_ID" />
+          <ScalarProperty Name="Crd_Date" ColumnName="Crd_Date" />
+          <ScalarProperty Name="Crd_By" ColumnName="Crd_By" />
+          <ScalarProperty Name="Lmd_Date" ColumnName="Lmd_Date" />
+          <ScalarProperty Name="Lmd_By" ColumnName="Lmd_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="EduProc" FunctionName="APSD_DatabaseModel.Store.EduProc" />
+  </EntityContainerMapping>
+</Mapping>

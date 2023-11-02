@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APSD_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address_Tbl">
+    <Key>
+      <PropertyRef Name="Address_Id" />
+    </Key>
+    <Property Name="Address_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country_Id" Type="int" />
+    <Property Name="State_Id" Type="int" />
+    <Property Name="District_Id" Type="int" />
+    <Property Name="PinCode" Type="int" />
+    <Property Name="Landmark" Type="varchar" MaxLength="250" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Course_Tbl">
+    <Key>
+      <PropertyRef Name="Course_Id" />
+    </Key>
+    <Property Name="Course_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Name" Type="varchar" MaxLength="250" />
+    <Property Name="Course_Description" Type="varchar" MaxLength="500" />
+    <Property Name="Course_Duration_IN_Dates" Type="varchar" MaxLength="250" />
+    <Property Name="Course_Image" Type="varchar" MaxLength="250" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Designation_Tbl">
+    <Key>
+      <PropertyRef Name="Designation_Id" />
+    </Key>
+    <Property Name="Designation_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Des_Tittle" Type="varchar" MaxLength="250" />
+    <Property Name="Des_Description" Type="varchar" MaxLength="250" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Education_Tbl">
+    <Key>
+      <PropertyRef Name="Education_Id" />
+    </Key>
+    <Property Name="Education_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="250" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee_Table">
+    <Key>
+      <PropertyRef Name="Employee_Id" />
+    </Key>
+    <Property Name="Employee_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="250" />
+    <Property Name="Mobile" Type="bigint" />
+    <Property Name="Gender" Type="varchar" MaxLength="250" />
+    <Property Name="Designation_Id" Type="int" />
+    <Property Name="Sallery" Type="varchar" MaxLength="250" />
+    <Property Name="Address_Id" Type="int" />
+    <Property Name="Profile_Img" Type="varchar" MaxLength="250" />
+    <Property Name="Qualification_Id" Type="int" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_Tbl">
+    <Key>
+      <PropertyRef Name="Event_Id" />
+    </Key>
+    <Property Name="Event_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Event_Tittle" Type="varchar" MaxLength="250" />
+    <Property Name="Event_Description" Type="varchar" MaxLength="500" />
+    <Property Name="Join_Date" Type="datetime" />
+    <Property Name="Exp_Date" Type="datetime" />
+    <Property Name="Start_Date" Type="datetime" />
+    <Property Name="End_Date" Type="datetime" />
+    <Property Name="Fee" Type="varchar" MaxLength="250" />
+    <Property Name="Total_Sheats" Type="varchar" MaxLength="250" />
+    <Property Name="Lectures" Type="varchar" MaxLength="250" />
+    <Property Name="Image" Type="varchar" MaxLength="250" />
+    <Property Name="Type" Type="varchar" MaxLength="250" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ISDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeedBack_Tbl">
+    <Key>
+      <PropertyRef Name="Feedback_Id" />
+    </Key>
+    <Property Name="Feedback_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Rating" Type="int" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gallery_Tbl">
+    <Key>
+      <PropertyRef Name="GalleryItemId" />
+    </Key>
+    <Property Name="GalleryItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gallery_Title" Type="varchar" MaxLength="250" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="File_Path" Type="varchar" MaxLength="500" />
+    <Property Name="File_Type" Type="varchar" MaxLength="250" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login_Tbl">
+    <Key>
+      <PropertyRef Name="Record_id" />
+    </Key>
+    <Property Name="Record_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Password" Type="varchar" MaxLength="250" />
+    <Property Name="Type" Type="varchar" MaxLength="250" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Qualification_Tbl">
+    <Key>
+      <PropertyRef Name="Qualfication_Id" />
+    </Key>
+    <Property Name="Qualfication_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Education_Id" Type="int" />
+    <Property Name="Board" Type="varchar" MaxLength="250" />
+    <Property Name="Passing_Year" Type="varchar" MaxLength="250" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student_Tbl">
+    <Key>
+      <PropertyRef Name="Student_Id" />
+    </Key>
+    <Property Name="Student_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Enrollment_Id" Type="int" />
+    <Property Name="Student_Name" Type="varchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="250" />
+    <Property Name="Mobile" Type="int" />
+    <Property Name="College" Type="varchar" MaxLength="250" />
+    <Property Name="Branch" Type="varchar" MaxLength="250" />
+    <Property Name="Year" Type="varchar" MaxLength="250" />
+    <Property Name="Aadhaar" Type="varchar" MaxLength="250" />
+    <Property Name="Technologies_Id" Type="int" />
+    <Property Name="Registration_Fee" Type="varchar" MaxLength="250" />
+    <Property Name="Course_Id" Type="int" />
+    <Property Name="Program" Type="varchar" MaxLength="250" />
+    <Property Name="Address_ID" Type="int" />
+    <Property Name="Crd_Date" Type="datetime" />
+    <Property Name="Crd_By" Type="varchar" MaxLength="250" />
+    <Property Name="Lmd_Date" Type="datetime" />
+    <Property Name="Lmd_By" Type="varchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <Function Name="EduProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Education_Id" Type="int" Mode="In" />
+    <Parameter Name="queryfor" Type="varchar(max)" Mode="In" />
+    <Parameter Name="title" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="crd_by" Type="varchar" Mode="In" />
+    <Parameter Name="lmd_by" Type="varchar" Mode="In" />
+    <Parameter Name="is_active" Type="bit" Mode="In" />
+    <Parameter Name="is_deleted" Type="bit" Mode="In" />
+  </Function>
+  <EntityContainer Name="APSD_DatabaseModelStoreContainer">
+    <EntitySet Name="Address_Tbl" EntityType="Self.Address_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course_Tbl" EntityType="Self.Course_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designation_Tbl" EntityType="Self.Designation_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education_Tbl" EntityType="Self.Education_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_Table" EntityType="Self.Employee_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event_Tbl" EntityType="Self.Event_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FeedBack_Tbl" EntityType="Self.FeedBack_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gallery_Tbl" EntityType="Self.Gallery_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Tbl" EntityType="Self.Login_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Qualification_Tbl" EntityType="Self.Qualification_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student_Tbl" EntityType="Self.Student_Tbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

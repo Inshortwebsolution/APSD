@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APSD_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address_Tbl">
+    <Key>
+      <PropertyRef Name="Address_Id" />
+    </Key>
+    <Property Name="Address_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country_Id" Type="Int32" />
+    <Property Name="State_Id" Type="Int32" />
+    <Property Name="District_Id" Type="Int32" />
+    <Property Name="PinCode" Type="Int32" />
+    <Property Name="Landmark" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Course_Tbl">
+    <Key>
+      <PropertyRef Name="Course_Id" />
+    </Key>
+    <Property Name="Course_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Course_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Course_Duration_IN_Dates" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Course_Image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Designation_Tbl">
+    <Key>
+      <PropertyRef Name="Designation_Id" />
+    </Key>
+    <Property Name="Designation_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Des_Tittle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Des_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Education_Tbl">
+    <Key>
+      <PropertyRef Name="Education_Id" />
+    </Key>
+    <Property Name="Education_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee_Table">
+    <Key>
+      <PropertyRef Name="Employee_Id" />
+    </Key>
+    <Property Name="Employee_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="Int64" />
+    <Property Name="Gender" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Designation_Id" Type="Int32" />
+    <Property Name="Sallery" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Address_Id" Type="Int32" />
+    <Property Name="Profile_Img" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Qualification_Id" Type="Int32" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_Tbl">
+    <Key>
+      <PropertyRef Name="Event_Id" />
+    </Key>
+    <Property Name="Event_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Event_Tittle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Event_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Join_Date" Type="DateTime" Precision="3" />
+    <Property Name="Exp_Date" Type="DateTime" Precision="3" />
+    <Property Name="Start_Date" Type="DateTime" Precision="3" />
+    <Property Name="End_Date" Type="DateTime" Precision="3" />
+    <Property Name="Fee" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Total_Sheats" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lectures" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ISDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeedBack_Tbl">
+    <Key>
+      <PropertyRef Name="Feedback_Id" />
+    </Key>
+    <Property Name="Feedback_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Rating" Type="Int32" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gallery_Tbl">
+    <Key>
+      <PropertyRef Name="GalleryItemId" />
+    </Key>
+    <Property Name="GalleryItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gallery_Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="File_Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="File_Type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login_Tbl">
+    <Key>
+      <PropertyRef Name="Record_id" />
+    </Key>
+    <Property Name="Record_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Id" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Qualification_Tbl">
+    <Key>
+      <PropertyRef Name="Qualfication_Id" />
+    </Key>
+    <Property Name="Qualfication_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Education_Id" Type="Int32" />
+    <Property Name="Board" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Passing_Year" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student_Tbl">
+    <Key>
+      <PropertyRef Name="Student_Id" />
+    </Key>
+    <Property Name="Student_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Enrollment_Id" Type="Int32" />
+    <Property Name="Student_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="Int32" />
+    <Property Name="College" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Aadhaar" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Technologies_Id" Type="Int32" />
+    <Property Name="Registration_Fee" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Course_Id" Type="Int32" />
+    <Property Name="Program" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Address_ID" Type="Int32" />
+    <Property Name="Crd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Crd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Lmd_Date" Type="DateTime" Precision="3" />
+    <Property Name="Lmd_By" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="APSD_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Address_Tbl" EntityType="Self.Address_Tbl" />
+    <EntitySet Name="Course_Tbl" EntityType="Self.Course_Tbl" />
+    <EntitySet Name="Designation_Tbl" EntityType="Self.Designation_Tbl" />
+    <EntitySet Name="Education_Tbl" EntityType="Self.Education_Tbl" />
+    <EntitySet Name="Employee_Table" EntityType="Self.Employee_Table" />
+    <EntitySet Name="Event_Tbl" EntityType="Self.Event_Tbl" />
+    <EntitySet Name="FeedBack_Tbl" EntityType="Self.FeedBack_Tbl" />
+    <EntitySet Name="Gallery_Tbl" EntityType="Self.Gallery_Tbl" />
+    <EntitySet Name="Login_Tbl" EntityType="Self.Login_Tbl" />
+    <EntitySet Name="Qualification_Tbl" EntityType="Self.Qualification_Tbl" />
+    <EntitySet Name="Student_Tbl" EntityType="Self.Student_Tbl" />
+    <FunctionImport Name="EduProc">
+      <Parameter Name="Education_Id" Mode="In" Type="Int32" />
+      <Parameter Name="queryfor" Mode="In" Type="String" />
+      <Parameter Name="title" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="crd_by" Mode="In" Type="String" />
+      <Parameter Name="lmd_by" Mode="In" Type="String" />
+      <Parameter Name="is_active" Mode="In" Type="Boolean" />
+      <Parameter Name="is_deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
