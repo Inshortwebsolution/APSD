@@ -122,12 +122,45 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\DesignationController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\QualificationController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reposetries\Address.cs" />
+    <Compile Include="Reposetries\Course.cs" />
+    <Compile Include="Reposetries\Designation.cs" />
+    <Compile Include="Reposetries\Education.cs" />
+    <Compile Include="Reposetries\Employee.cs" />
+    <Compile Include="Reposetries\Event.cs" />
+    <Compile Include="Reposetries\FeedBack.cs" />
+    <Compile Include="Reposetries\IAddress.cs" />
+    <Compile Include="Reposetries\ICourse.cs" />
+    <Compile Include="Reposetries\IDesignation.cs" />
+    <Compile Include="Reposetries\IEducation.cs" />
+    <Compile Include="Reposetries\IEmployee.cs" />
+    <Compile Include="Reposetries\IEvent.cs" />
+    <Compile Include="Reposetries\IFeedBack.cs" />
+    <Compile Include="Reposetries\ILogin.cs" />
+    <Compile Include="Reposetries\IQualification.cs" />
+    <Compile Include="Reposetries\IStudent.cs" />
+    <Compile Include="Reposetries\IUploadeVideo.cs" />
+    <Compile Include="Reposetries\Login.cs" />
+    <Compile Include="Reposetries\Qualification.cs" />
+    <Compile Include="Reposetries\Student.cs" />
+    <Compile Include="Reposetries\UploadeVideo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assetss\css\style.css" />
@@ -492,15 +525,72 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\GeneralMaster.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Address\Create.cshtml" />
+    <Content Include="Views\Address\Delete.cshtml" />
+    <Content Include="Views\Address\Details.cshtml" />
+    <Content Include="Views\Address\Edit.cshtml" />
+    <Content Include="Views\Address\Index.cshtml" />
+    <Content Include="Views\Admin\Desboard.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Designation\Create.cshtml" />
+    <Content Include="Views\Designation\Delete.cshtml" />
+    <Content Include="Views\Designation\Details.cshtml" />
+    <Content Include="Views\Designation\Edit.cshtml" />
+    <Content Include="Views\Designation\Index.cshtml" />
+    <Content Include="Views\Education\Create.cshtml" />
+    <Content Include="Views\Education\Delete.cshtml" />
+    <Content Include="Views\Education\Details.cshtml" />
+    <Content Include="Views\Education\Edit.cshtml" />
+    <Content Include="Views\Education\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\Delete.cshtml" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\FeedBack\Create.cshtml" />
+    <Content Include="Views\FeedBack\Delete.cshtml" />
+    <Content Include="Views\FeedBack\Details.cshtml" />
+    <Content Include="Views\FeedBack\Edit.cshtml" />
+    <Content Include="Views\FeedBack\Index.cshtml" />
+    <Content Include="Views\Gallery\Create.cshtml" />
+    <Content Include="Views\Gallery\Delete.cshtml" />
+    <Content Include="Views\Gallery\Details.cshtml" />
+    <Content Include="Views\Gallery\Edit.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Home\AllCourse.cshtml" />
-    <Content Include="Views\Shared\Admin_Layout.cshtml" />
-    <Content Include="Views\Admin\Desboard.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
+    <Content Include="Views\Login\Delete.cshtml" />
+    <Content Include="Views\Login\Details.cshtml" />
+    <Content Include="Views\Login\Edit.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Qualification\Create.cshtml" />
+    <Content Include="Views\Qualification\Delete.cshtml" />
+    <Content Include="Views\Qualification\Details.cshtml" />
+    <Content Include="Views\Qualification\Edit.cshtml" />
+    <Content Include="Views\Qualification\Index.cshtml" />
+    <Content Include="Views\Shared\Admin_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\GeneralMaster.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -522,6 +612,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
