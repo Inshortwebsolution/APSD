@@ -12,18 +12,20 @@ namespace APSD.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult AboutUs()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
-
-        public ActionResult Contact()
+        public ActionResult AllCourse()
         {
-            ViewBag.Message = "Your contact page.";
-
+            return View();
+        }
+        public ActionResult AdminPannel()
+        {
+            return View();
+        }
+        public ActionResult Login()
+        {
             return View();
         }
     }
