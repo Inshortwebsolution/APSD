@@ -65,6 +65,8 @@ namespace APSD.Reposetries
             bool n=false;
             try
             {
+                login_Tbl.Type = login_Tbl.Type;
+                login_Tbl.LastLoginDate = DateTime.Now;
                 login_Tbl.Crd_Date = DateTime.Now;
                 login_Tbl.Crd_By = "1";
                 login_Tbl.Lmd_Date = DateTime.Now;
