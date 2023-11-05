@@ -1,13 +1,18 @@
-﻿using System;
+﻿using APSD.Models;
+using APSD.Reposetries;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace APSD.Controllers
 {
     public class HomeController : Controller
     {
+        IHome home = new Home();
         public ActionResult Index()
         {
             return View();
@@ -27,6 +32,42 @@ namespace APSD.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Login_Tbl Model)
+        {
+            if (ModelState.IsValid)
+            {
+                bool res = home.LoginData(Model);
+
+                return RedirectToAction("Index", "Login");
+            }
+
+            return View();
+            
+        }
+
+        public ActionResult Signup()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Signup(Login_Tbl Model)
+        {
+            if (ModelState.IsValid) 
+            {
+                bool res = home.SignupData(Model);
+            }
+            return RedirectToAction("Login");
+           
+        }
+
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
         }
     }
 }

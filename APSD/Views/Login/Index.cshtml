@@ -4,7 +4,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Login Page</h2>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <li><a>Dear -@User.Identity.Name</a></li>
+    <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+}
+else
+{
+    <li>@Html.ActionLink("Login", "Login", "Home")</li>
+}
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -44,44 +55,45 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.User_Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastLoginDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Crd_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Crd_By)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lmd_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lmd_By)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsDeleted)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Record_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Record_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Record_id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastLoginDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Crd_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Crd_By)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lmd_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lmd_By)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Record_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Record_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Record_id })
+            </td>
+        </tr>
+    }
 
 </table>
