@@ -28,5 +28,13 @@ namespace APSD.Controllers
         {
             return View();
         }
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+        public ActionResult Ragistration()
+        {
+            return View();
+        }
     }
 }
