@@ -13,8 +13,6 @@ namespace APSD.Controllers
 {
     public class AddressController : Controller
     {
-        
-
         IAddress address = new Address();
 
         // GET: Address

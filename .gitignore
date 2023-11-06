@@ -1,0 +1,23 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/APSD/Controllers/StudentController.cs
+/APSD/Web.config
+/APSD/obj/Debug/edmxResourcesToEmbed/Models
+/APSD/obj/Debug/TempPE
+/APSD/Models/Employee_Table.cs
+/APSD/Models/FeedBack_Tbl.cs
+/APSD/Models/Model1.Context.cs
+/APSD/Models/Gallery_Tbl.cs
+/APSD/Models/Model1.Designer.cs
+/APSD/Models/Course_Tbl.cs
+/APSD/Models/Designation_Tbl.cs
+/APSD/Models/Event_Tbl.cs
+/APSD/Models/Education_Tbl.cs
+/APSD/Models/Login_Tbl.cs
+/APSD/Models/Address_Tbl.cs
+/APSD/Models/Model1.cs
+/APSD/Models/Qualification_Tbl.cs
+/APSD/Models/Student_Tbl.cs
+/.vs/APSD/config/applicationhost.config

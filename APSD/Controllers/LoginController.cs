@@ -11,9 +11,9 @@ using APSD.Reposetries;
 
 namespace APSD.Controllers
 {
+    [Authorize]
     public class LoginController : Controller
     {
-       
 
         ILogin login = new Login();
 
