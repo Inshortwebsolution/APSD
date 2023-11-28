@@ -9,6 +9,7 @@ namespace APSD.Reposetries
 {
     internal interface IHome
     {
+        List<Gallery_Tbl> getVideos();
         bool LoginData(Login_Tbl model);
         bool SignupData(Login_Tbl model);
     }

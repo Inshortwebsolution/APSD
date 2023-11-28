@@ -1,4 +1,6 @@
-﻿@{
+﻿@using APSD.Models
+@model List<Event_Tbl>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/GeneralMaster.cshtml";
 }
@@ -45,47 +47,23 @@
 <section class="tp_feature">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-                <div class="single_tp">
-                    <h3>Summer Training Certification Program </h3>
-                    <p>B.TECH , PGDCA , BCA , B.SC , Bsc.<br /><b>Branch :-</b>CS/IT,EC,EE MS</p>
-                    <a href="#" class="cta">
-                        <span>Explore</span>
-                        <svg width="13px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div><!-- END COL -->
-            <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-                <div class="single_tp">
-                    <h3>Intership</h3>
-                    <p>B.TECH , PGDCA , BCA , B.SC , Bsc.<br /><b>Branch :-</b>CS/IT,EC,EE MS</p>
-
-                    <a href="#" class="cta">
-                        <span>Explore</span>
-                        <svg width="13px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div><!-- END COL -->
-            <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
-                <div class="single_tp">
-                    <h3>Appreticship</h3>
-                    <p>B.TECH , PGDCA , BCA , B.SC , Bsc.<br /><b>Branch :-</b>CS/IT,EC,EE MS</p>
-
-                    <a href="#" class="cta">
-                        <span>Explore</span>
-                        <svg width="13px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div><!-- END COL -->
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="single_tp">
+                        <h3>@item.Event_Tittle</h3>
+                        <p>@item.Event_Description</p>
+                        <a href="#" class="cta">
+                            <span>Join Now</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div><!-- END COL -->
+            }
+            
         </div><!-- END ROW -->
     </div><!-- END CONTAINER -->
 </section>

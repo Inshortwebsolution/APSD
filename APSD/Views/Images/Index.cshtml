@@ -53,9 +53,7 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            <iframe width="420" height="345" src="@Html.DisplayFor(modelItem => item.File_Path)">
-            </iframe>
-           
+            <img src="@Html.DisplayFor(modelItem => item.File_Path)" style="width:200px;height:100px"/>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.File_Type)
@@ -79,9 +77,9 @@
             @Html.DisplayFor(modelItem => item.IsDeleted)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.GalleryItemId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.GalleryItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.GalleryItemId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.GalleryItemId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GalleryItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GalleryItemId })
         </td>
     </tr>
 }

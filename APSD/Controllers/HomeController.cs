@@ -13,9 +13,11 @@ namespace APSD.Controllers
     public class HomeController : Controller
     {
         IHome home = new Home();
+        IEvent Event = new Event();
         public ActionResult Index()
         {
-            return View();
+            List<Event_Tbl> event1= Event.GetData();
+            return View(event1);
         }
         public ActionResult AboutUs()
         {
@@ -25,6 +27,12 @@ namespace APSD.Controllers
         {
             return View();
         }
+        public ActionResult Gallery()
+        {
+            List<Gallery_Tbl> gallery = home.getVideos();
+            return View(gallery);
+        }
+
         public ActionResult AdminPannel()
         {
             return View();

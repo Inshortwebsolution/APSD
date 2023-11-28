@@ -1,0 +1,161 @@
+﻿@using APSD.Models
+@model List<Gallery_Tbl>
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+
+<style>
+    /* Add some basic styling */
+    .gallery {
+        display: flex;
+    }
+
+    .tab {
+        cursor: pointer;
+        color: #2eca7f;
+    }
+
+        .tab.active {
+            background-color: white;
+            color: red;
+        }
+
+    .content {
+        display: none;
+    }
+
+        .content.active {
+            display: block;
+        }
+</style>
+
+<section class="section-top">
+    <div class="container">
+        <div class="col-lg-10 offset-lg-1 text-center">
+            <div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                <h1>Gallery </h1>
+                <ul>
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li>
+                        <div class="tab" data-tab="videos">/ Videos</div>
+                    </li>
+                    <li>
+                        <div class="tab" data-tab="images">/ Images</div>
+                    </li>
+                </ul>
+            </div><!-- //.HERO-TEXT -->
+        </div><!--- END COL -->
+    </div><!--- END CONTAINER -->
+</section>
+<!-- END SECTION TOP -->
+@*<div class="gallery">
+        <div class="tab" data-tab="videos">Videos</div>
+        <div class="tab" data-tab="images">Images</div>
+    </div>*@
+<ul class="nav nav-tabs" style="background-image: url('../../content/assetss/img/back.png');">
+    <li class="nav-item">
+        <a class="nav-link active tab" aria-current="page" href="#" data-tab="videos">
+            Videos
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link tab" href="#" data-tab="images">
+            Images
+
+        </a>
+    </li>
+</ul>
+
+
+<div class="content" id="videos">
+    <!-- Video gallery content goes here -->
+    <!--START COURSE -->
+    <div class="bc_bg_two section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Videos</h2>
+                <p>Our YouTube Videos  <span><u> Good Experince </u></span></p>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.Where(x => x.File_Type == "Video"))
+                {
+                    <div class="col-lg-4 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                        <div class="course-slide3">
+                            <div class="course-img3">
+                                <iframe width="100%" height="200px" src="@item.File_Path" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                                </iframe>
+
+                            </div>
+                            <div class="course-content3">
+                                <a class="c_btn2" href="single_course.html">@item.Gallery_Title</a>
+                                @*<a class="c_btn3" href="single_course.html">@item.File_Type</a>*@
+                                <h3><a href="single_course.html">@item.Description</a></h3>
+                            </div>
+                        </div><!--END COURSE SLIDE -->
+                    </div><!--END COL -->
+
+                }
+
+                <div class="col-lg-12 text-center">
+                    <div class="cc_btn">
+                        <a class="btn_one" href="course.html">View All Videos</a>
+                    </div>
+                </div><!--END COL -->
+            </div><!--END ROW -->
+        </div><!--END CONTAINER -->
+    </div>
+    <!--END COURSE -->
+</div>
+
+<div class="content" id="images">
+    <!-- Image gallery content goes here -->
+    <!--START COURSE -->
+    <div class="best-cpurse section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Images</h2>
+                <p>Our Images<span><u>With All Photos</u></span></p>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.Where(x => x.File_Type == "Image"))
+                {
+
+                    <div class="card" style="width: 25rem;">
+                        <img class="card-img-top" src="@item.File_Path" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">@item.Description</p>
+                        </div>
+                    </div>
+                }
+
+                <div class="col-lg-12 text-center">
+                    <div class="cc_btn">
+                        <a class="btn_one" href="course.html">View All Images</a>
+                    </div>
+                </div><!--END ROW -->
+            </div><!--END CONTAINER -->
+    </div>
+    <!--END COURSE -->
+</div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".tab").on("click", function () {
+            var tabName = $(this).data("tab");
+            $(".content").hide();
+            $("#" + tabName).show();
+            $(".tab").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        // Set the default tab
+        $("#videos").show();
+        $(".tab[data-tab='videos']").addClass("active");
+    });
+</script>

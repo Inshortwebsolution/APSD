@@ -142,6 +142,7 @@
     <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\QualificationController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -216,15 +217,18 @@
     <Compile Include="Reposetries\ILogin.cs" />
     <Compile Include="Reposetries\IQualification.cs" />
     <Compile Include="Reposetries\IStudent.cs" />
+    <Compile Include="Reposetries\IUploadeImage.cs" />
     <Compile Include="Reposetries\IUploadeVideo.cs" />
     <Compile Include="Reposetries\Login.cs" />
     <Compile Include="Reposetries\Qualification.cs" />
     <Compile Include="Reposetries\Student.cs" />
+    <Compile Include="Reposetries\UploadeImage.cs" />
     <Compile Include="Reposetries\UploadeVideo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assetss\css\style.css" />
     <Content Include="Content\assetss\img\apple-touch-icon.png" />
+    <Content Include="Content\assetss\img\back.png" />
     <Content Include="Content\assetss\img\card.jpg" />
     <Content Include="Content\assetss\img\favicon.png" />
     <Content Include="Content\assetss\img\logo.png" />
@@ -404,6 +408,7 @@
     <Content Include="Content\assets\images\event\e4.png" />
     <Content Include="Content\assets\images\event\e5.png" />
     <Content Include="Content\assets\images\event\e6.png" />
+    <Content Include="Content\assets\images\icon\back.png" />
     <Content Include="Content\assets\images\icon\ct1.svg" />
     <Content Include="Content\assets\images\icon\ct2.svg" />
     <Content Include="Content\assets\images\icon\ct3.svg" />
@@ -595,6 +600,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="UploadFile\Screenshot 2023-06-29 163231.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -669,6 +675,12 @@
     <Content Include="Views\Gallery\Create.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Signup.cshtml" />
+    <Content Include="Views\Images\Create.cshtml" />
+    <Content Include="Views\Images\Delete.cshtml" />
+    <Content Include="Views\Images\Details.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

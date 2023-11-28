@@ -32,7 +32,6 @@ namespace APSD.Controllers
             if (ModelState.IsValid)
             {
                 bool res = _videoupload.SaveData(gallery_Tbl);
-
                 return RedirectToAction("Index");
             }
 
@@ -123,5 +122,6 @@ namespace APSD.Controllers
         //    }
         //    base.Dispose(disposing);
         //}
+        
     }
 }

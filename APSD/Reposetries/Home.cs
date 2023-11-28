@@ -13,6 +13,12 @@ namespace APSD.Reposetries
     public class Home : IHome
     {
         APSD_DatabaseEntities context = new APSD_DatabaseEntities();
+
+        public List<Gallery_Tbl> getVideos()
+        {
+            return context.Gallery_Tbl.ToList();
+        }
+
         public bool LoginData(Login_Tbl model)
         {
             bool n= false;
