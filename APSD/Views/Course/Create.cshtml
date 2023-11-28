@@ -4,14 +4,35 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Create Course</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BranchId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    var staticCourses = new List<SelectListItem>
+             {
+             new SelectListItem { Value = "1", Text = "CSE" },
+             new SelectListItem { Value = "2", Text = "EC" },
+             new SelectListItem { Value = "3", Text = "ME" },
+             new SelectListItem { Value = "4", Text = "EE" },
+         };
+                }
+                @Html.DropDownListFor(model => model.BranchId, staticCourses, "Select a Branch", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BranchId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
         <div class="form-group">
             @Html.LabelFor(model => model.Course_Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -19,6 +40,10 @@
                 @Html.ValidationMessageFor(model => model.Course_Name, "", new { @class = "text-danger" })
             </div>
         </div>
+
+
+
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Course_Description, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -39,62 +64,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Course_Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Course_Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Course_Image, new { htmlAttributes = new { @class = "form-control", id = "finalpath", ReadOnly = true } })
                 @Html.ValidationMessageFor(model => model.Course_Image, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.Crd_Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Crd_Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Crd_Date, "", new { @class = "text-danger" })
-            </div>
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Upload Image :</label>
+            <input class="form-control" type="file" id="fupload" multiple />
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Crd_By, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Crd_By, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Crd_By, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Lmd_Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Lmd_Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Lmd_Date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Lmd_By, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Lmd_By, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Lmd_By, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsActive)
-                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsDeleted, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsDeleted)
-                    @Html.ValidationMessageFor(model => model.IsDeleted, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -103,6 +81,38 @@
         </div>
     </div>
 }
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#fupload').on('change', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            var formdata = new FormData(); // FormData object
+            var fileInput = $('#fupload')[0]; // Select the first element with id "fileInput"
+
+            // Iterating through each files selected in fileInput
+            for (var i = 0; i < fileInput.files.length; i++) {
+                // Appending each file to FormData object
+                formdata.append(fileInput.files[i].name, fileInput.files[i]);
+            }
+
+            // Creating an XMLHttpRequest and sending
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Course/Upload');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var stringWithoutQuotes = xhr.responseText.replace(/"/g, '');
+                    $('#finalpath').val(stringWithoutQuotes);
+                }
+            }
+
+            xhr.send(formdata);
+        });
+    });
+
+</script>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

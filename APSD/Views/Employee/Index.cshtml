@@ -4,114 +4,129 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mobile)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Designation_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sallery)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Profile_Img)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Qualification_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Crd_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Crd_By)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lmd_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lmd_By)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsDeleted)
-        </th>
-        <th></th>
-    </tr>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <span class="card-title">
+                        Employee Details
+                        <div class="float-end btn btn-outline-primary text-decoration-none text-dark">@Html.ActionLink("Create New", "Create")</div>
+                    </span>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Mobile)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Designation_Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Sallery)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Address_Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Profile_Img)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Qualification_Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Crd_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Crd_By)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lmd_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lmd_By)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsActive)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsDeleted)
+                            </th>
+                            <th></th>
+                        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mobile)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Designation_Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sallery)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address_Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile_Img)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Qualification_Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Crd_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Crd_By)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lmd_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lmd_By)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsDeleted)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Employee_Id }) 
-            @Html.ActionLink("Details", "Details", new { id=item.Employee_Id }) 
-            @Html.ActionLink("Delete", "Delete", new { id=item.Employee_Id })
-        </td>
-    </tr>
-}
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Mobile)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Designation_Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Sallery)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address_Id)
+                                </td>
+                                <td>
+                                    <a href="@Html.DisplayFor(modelItem => item.Profile_Img)">View</a>
+                                    
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Qualification_Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Crd_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Crd_By)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Lmd_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Lmd_By)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsActive)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsDeleted)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Employee_Id })
+                                    @Html.ActionLink("Details", "Details", new { id = item.Employee_Id })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Employee_Id })
+                                </td>
+                            </tr>
+                        }
 
-</table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

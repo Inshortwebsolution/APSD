@@ -1,0 +1,113 @@
+﻿@using APSD.Models
+@model Tuple<List<Placement_Tbl>,List<Student_Tbl>>
+@{
+    ViewBag.Title = "OurPlacement";
+    Layout = "~/Views/Shared/GeneralMaster.cshtml";
+}
+
+<style>
+    /* Add some basic styling */
+    .gallery {
+        display: flex;
+    }
+
+    .tab {
+        cursor: pointer;
+    }
+
+        .tab.active {
+            background-color: white;
+            color: red;
+        }
+
+    .content {
+        display: none;
+    }
+
+        .content.active {
+            display: block;
+        }
+</style>
+
+<!-- START SECTION TOP -->
+<section class="section-top">
+    <div class="container">
+        <div class="col-lg-10 offset-lg-1 text-center">
+            <div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                <h1>Our Placement</h1>
+                <ul>
+                    <li><a href="/Home/index">Home</a></li>
+                    <li><div class="tab" data-tab="TP">/ Total Placement</div></li>
+                    <li><div class="tab" data-tab="CSE">/ CSE/IT</div></li>
+                    <li><div class="tab" data-tab="EC">/ EC</div></li>
+                    <li><div class="tab" data-tab="EE">/ EE</div></li>
+                    <li><div class="tab" data-tab="ME">/ ME</div></li>
+                    <li><div class="tab" data-tab="CE">/ CE</div></li>
+                </ul>
+            </div><!-- //.HERO-TEXT -->
+        </div><!--- END COL -->
+    </div><!--- END CONTAINER -->
+</section>
+<!-- START TEAM-->
+
+<div class="content" id="TP">
+    <!-- TP content goes here -->
+    <section class="team_member section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Team Member</h2>
+                <p>Our Expert <span><u>Instructors</u></span></p>
+            </div>
+            <div class="row text-center">
+                @foreach (var item in Model.Item1)
+                {
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                        <div class="our-team">
+                            <div class="team_img">
+                                <img src="/Content/assets/images/all-img/team5.png" alt="team-image">
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="title">@item.Student_ID</h3>
+                                <span class="post">@item.Company_Name</span>
+                                <div class="sth_det2">
+                                    <span class="fa fa-stack-overflow"> <u>@item.Position</u></span>
+                                    <span class="ti-user"> <u>EX -1 Year</u></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--- END COL -->
+                }
+
+            </div><!-- END ROW -->
+        </div><!-- END CONTAINER -->
+    </section>
+
+</div>
+<!-- END TEAM -->
+@*<div class="gallery">
+        <div class="tab" onclick="openTab('images')">Images</div>
+        <div class="tab" onclick="openTab('videos')">Videos</div>
+    </div>*@
+
+<script src="~/Content/assets/js/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".tab").on("click", function () {
+            var tabName = $(this).data("tab");
+            $(".content").hide();
+            $("#" + tabName).show();
+            $(".tab").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        // Set the default tab
+        $("#TP").show();
+        $(".tab[data-tab='TP']").addClass("active");
+    });
+</script>

@@ -136,6 +136,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EventController.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PlacementController.cs" />
     <Compile Include="Controllers\QualificationController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -151,10 +153,14 @@
     <Compile Include="Models\Address_Tbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BindDDL.cs" />
     <Compile Include="Models\Course_Tbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Designation_Tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Document_Tbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Education_Tbl.cs">
@@ -190,16 +196,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Placement_Tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Qualification_Tbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Student_Tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reposetries\Address.cs" />
     <Compile Include="Reposetries\Course.cs" />
     <Compile Include="Reposetries\Designation.cs" />
+    <Compile Include="Reposetries\Document.cs" />
     <Compile Include="Reposetries\Education.cs" />
     <Compile Include="Reposetries\Employee.cs" />
     <Compile Include="Reposetries\Event.cs" />
@@ -208,16 +227,19 @@
     <Compile Include="Reposetries\IAddress.cs" />
     <Compile Include="Reposetries\ICourse.cs" />
     <Compile Include="Reposetries\IDesignation.cs" />
+    <Compile Include="Reposetries\IDocument.cs" />
     <Compile Include="Reposetries\IEducation.cs" />
     <Compile Include="Reposetries\IEmployee.cs" />
     <Compile Include="Reposetries\IEvent.cs" />
     <Compile Include="Reposetries\IFeedBack.cs" />
     <Compile Include="Reposetries\IHome.cs" />
     <Compile Include="Reposetries\ILogin.cs" />
+    <Compile Include="Reposetries\IPlacement.cs" />
     <Compile Include="Reposetries\IQualification.cs" />
     <Compile Include="Reposetries\IStudent.cs" />
     <Compile Include="Reposetries\IUploadeVideo.cs" />
     <Compile Include="Reposetries\Login.cs" />
+    <Compile Include="Reposetries\Placement.cs" />
     <Compile Include="Reposetries\Qualification.cs" />
     <Compile Include="Reposetries\Student.cs" />
     <Compile Include="Reposetries\UploadeVideo.cs" />
@@ -595,6 +617,50 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="StudentAssets\css\demo_1\style.css" />
+    <Content Include="StudentAssets\images\bg_card.jpg" />
+    <Content Include="StudentAssets\images\dashboard\ecommerce\filterbg.jpg" />
+    <Content Include="StudentAssets\images\dashboard\hospital\img_call.png" />
+    <Content Include="StudentAssets\images\dashboard\img_1.jpg" />
+    <Content Include="StudentAssets\images\dashboard\img_2.jpg" />
+    <Content Include="StudentAssets\images\dashboard\img_3.jpg" />
+    <Content Include="StudentAssets\images\dashboard\img_4.jpg" />
+    <Content Include="StudentAssets\images\dashboard\img_5.jpg" />
+    <Content Include="StudentAssets\images\faces\face1.jpg" />
+    <Content Include="StudentAssets\images\faces\face2.jpg" />
+    <Content Include="StudentAssets\images\faces\face3.jpg" />
+    <Content Include="StudentAssets\images\faces\face4.jpg" />
+    <Content Include="StudentAssets\images\faces\face5.jpg" />
+    <Content Include="StudentAssets\images\faces\face6.jpg" />
+    <Content Include="StudentAssets\images\faces\face7.jpg" />
+    <Content Include="StudentAssets\images\faces\face9.jpg" />
+    <Content Include="StudentAssets\images\favicon.png" />
+    <Content Include="StudentAssets\js\chart.js" />
+    <Content Include="StudentAssets\js\dashboard.js" />
+    <Content Include="StudentAssets\js\file-upload.js" />
+    <Content Include="StudentAssets\js\hoverable-collapse.js" />
+    <Content Include="StudentAssets\js\misc.js" />
+    <Content Include="StudentAssets\js\off-canvas.js" />
+    <Content Include="StudentAssets\js\select2.js" />
+    <Content Include="StudentAssets\js\settings.js" />
+    <Content Include="StudentAssets\js\todolist.js" />
+    <Content Include="StudentAssets\js\typeahead.js" />
+    <Content Include="StudentAssets\vendors\chart.js\Chart.min.js" />
+    <Content Include="StudentAssets\vendors\css\vendor.bundle.base.css" />
+    <Content Include="StudentAssets\vendors\flag-icon-css\css\flag-icon.min.css" />
+    <Content Include="StudentAssets\vendors\flot\jquery.flot.categories.js" />
+    <Content Include="StudentAssets\vendors\flot\jquery.flot.fillbetween.js" />
+    <Content Include="StudentAssets\vendors\flot\jquery.flot.js" />
+    <Content Include="StudentAssets\vendors\flot\jquery.flot.resize.js" />
+    <Content Include="StudentAssets\vendors\flot\jquery.flot.stack.js" />
+    <Content Include="StudentAssets\vendors\font-awesome\css\font-awesome.min.css" />
+    <Content Include="StudentAssets\vendors\jquery-bar-rating\css-stars.css" />
+    <Content Include="StudentAssets\vendors\jquery-bar-rating\jquery.barrating.min.js" />
+    <Content Include="StudentAssets\vendors\js\vendor.bundle.base.js" />
+    <Content Include="StudentAssets\vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="StudentAssets\vendors\select2-bootstrap-theme\select2-bootstrap.min.css" />
+    <Content Include="StudentAssets\vendors\select2\select2.min.css" />
+    <Content Include="StudentAssets\vendors\select2\select2.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -669,10 +735,25 @@
     <Content Include="Views\Gallery\Create.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Signup.cshtml" />
+    <Content Include="Views\Placement\Create.cshtml" />
+    <Content Include="Views\Placement\Delete.cshtml" />
+    <Content Include="Views\Placement\Details.cshtml" />
+    <Content Include="Views\Placement\Edit.cshtml" />
+    <Content Include="Views\Placement\Index.cshtml" />
+    <Content Include="Views\Placement\OurPlacement.cshtml" />
+    <Content Include="Views\Home\StudentRegistration.cshtml" />
+    <Content Include="Views\Document\Create.cshtml" />
+    <Content Include="Views\Document\Delete.cshtml" />
+    <Content Include="Views\Document\Details.cshtml" />
+    <Content Include="Views\Document\Edit.cshtml" />
+    <Content Include="Views\Document\Index.cshtml" />
+    <Content Include="Views\Home\USER.cshtml" />
+    <Content Include="Views\Shared\Student_layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\assetss\vendor\chart.js\plugins\" />
+    <Folder Include="UploadFile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

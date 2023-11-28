@@ -43,9 +43,7 @@ namespace APSD.Controllers
             return View();
         }
 
-        // POST: FeedBack/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Feedback_Id,User_ID,Description,Rating,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] FeedBack_Tbl feedBack_Tbl)
@@ -53,9 +51,8 @@ namespace APSD.Controllers
             if (ModelState.IsValid)
             {
                 bool res = _feedback.SaveData(feedBack_Tbl);
-                return RedirectToAction("Index");
+                return Redirect("/Home/index");
             }
-
             return View(feedBack_Tbl);
         }
 

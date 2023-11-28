@@ -4,126 +4,141 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Event_Tittle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Event_Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Join_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Exp_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Start_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.End_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fee)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Total_Sheats)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lectures)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Crd_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Crd_By)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lmd_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lmd_By)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ISDeleted)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Event_Tittle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Event_Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Join_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Exp_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Start_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.End_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fee)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Total_Sheats)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lectures)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Crd_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Crd_By)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lmd_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lmd_By)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ISDeleted)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Event_Id }) 
-            @Html.ActionLink("Details", "Details", new { id=item.Event_Id }) 
-            @Html.ActionLink("Delete", "Delete", new { id=item.Event_Id })
-        </td>
-    </tr>
-}
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <span class="card-title">
+                        Events Detail
+                        <div class="float-end btn btn-outline-primary text-decoration-none text-dark">@Html.ActionLink("Create New", "Create")</div>
+                    </span>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Event_Tittle)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Event_Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Join_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Exp_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Start_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.End_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Fee)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Total_Sheats)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lectures)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Image)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Crd_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Crd_By)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lmd_Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lmd_By)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsActive)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ISDeleted)
+                            </th>
+                            <th></th>
+                        </tr>
 
-</table>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Event_Tittle)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Event_Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Join_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exp_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Start_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.End_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Fee)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Total_Sheats)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Lectures)
+                                </td>
+                                <td>
+                                    <a href="@Html.DisplayFor(modelItem => item.Image)">View</a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Crd_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Crd_By)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Lmd_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Lmd_By)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsActive)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ISDeleted)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Event_Id })
+                                    @Html.ActionLink("Details", "Details", new { id = item.Event_Id })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Event_Id })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
