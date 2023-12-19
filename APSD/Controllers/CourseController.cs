@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -48,7 +49,7 @@ namespace APSD.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Course_Id,Course_Name,Course_Description,Course_Duration_IN_Dates,Course_Image,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted")] Course_Tbl course_Tbl)
+        public ActionResult Create([Bind(Include = "Course_Id,Course_Name,Course_Description,Course_Duration_IN_Dates,Course_Image,Crd_Date,Crd_By,Lmd_Date,Lmd_By,IsActive,IsDeleted,BranchId")] Course_Tbl course_Tbl)
         {
             if (ModelState.IsValid)
             {
@@ -115,13 +116,33 @@ namespace APSD.Controllers
             return RedirectToAction("Index");
         }
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+
+        public JsonResult Upload()
+        {
+            string finalpath = "";
+            for (int i = 0; i < Request.Files.Count; i++)
+            {
+                HttpPostedFileBase file = Request.Files[i]; //Uploaded file
+                                                            //Use the following properties to get file's name, size and MIMEType
+                int fileSize = file.ContentLength;
+                string fileName = file.FileName;
+                string mimeType = file.ContentType;
+                System.IO.Stream fileContent = file.InputStream;
+
+                string path = Path.Combine(Server.MapPath("/UploadFile"), file.FileName);
+                string searchTerm = "\\UploadFile\\";
+
+                int startIndex = path.IndexOf(searchTerm);
+
+                if (startIndex >= 0)
+                {
+                    finalpath = path.Substring(startIndex).Replace('\\', '/'); // Extract from the startIndex to the end of the string
+
+                }
+                //To save file, use SaveAs method
+                file.SaveAs(path); //File will be saved in application root
+            }
+            return Json(finalpath, JsonRequestBehavior.AllowGet);
+        }
     }
 }

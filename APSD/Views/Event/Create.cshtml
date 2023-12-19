@@ -5,10 +5,10 @@
 }
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Create Event</h4>
         <hr />
@@ -88,9 +88,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", id = "finalpath", ReadOnly = true } })
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Upload Image :</label>
+            <input class="form-control" type="file" id="fupload" multiple />
         </div>
 
         <div class="form-group">
@@ -101,7 +106,7 @@
             </div>
         </div>
 
-      
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -110,6 +115,38 @@
         </div>
     </div>
 }
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#fupload').on('change', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            var formdata = new FormData(); // FormData object
+            var fileInput = $('#fupload')[0]; // Select the first element with id "fileInput"
+
+            // Iterating through each files selected in fileInput
+            for (var i = 0; i < fileInput.files.length; i++) {
+                // Appending each file to FormData object
+                formdata.append(fileInput.files[i].name, fileInput.files[i]);
+            }
+
+            // Creating an XMLHttpRequest and sending
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Event/Upload');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var stringWithoutQuotes = xhr.responseText.replace(/"/g, '');
+                    $('#finalpath').val(stringWithoutQuotes);
+                }
+            }
+
+            xhr.send(formdata);
+        });
+    });
+
+</script>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

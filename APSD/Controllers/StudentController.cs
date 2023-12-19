@@ -53,7 +53,7 @@ namespace APSD.Controllers
             if (ModelState.IsValid)
             {
                 bool res = _student.SaveData(student_Tbl);
-                return RedirectToAction("Index");
+                return Redirect("/Home/Index");
             }
 
             return View(student_Tbl);

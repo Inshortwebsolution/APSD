@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace APSD.Controllers
 {
@@ -16,8 +17,12 @@ namespace APSD.Controllers
         IEvent Event = new Event();
         public ActionResult Index()
         {
-            List<Event_Tbl> event1= Event.GetData();
-            return View(event1);
+            List<Course_Tbl> course_Tbls = home.getcoures();
+            List<Event_Tbl> event_Tbls = home.getEvent();
+            List<FeedBack_Tbl> feedback_Tbls = home.getFeedback();
+            Tuple<List<Course_Tbl>, List<Event_Tbl>, List<FeedBack_Tbl>> tpl = new Tuple<List<Course_Tbl>, List<Event_Tbl>, List<FeedBack_Tbl>>(course_Tbls, event_Tbls, feedback_Tbls);
+
+            return View(tpl);
         }
         public ActionResult AboutUs()
         {
@@ -25,8 +30,20 @@ namespace APSD.Controllers
         }
         public ActionResult AllCourse()
         {
+            List<Course_Tbl> courses = home.getcoures();
+            return View(courses);
+        }
+        public ActionResult AdminPannel()
+        {
             return View();
         }
+
+        public ActionResult OurPlacement()
+        {
+            return View();
+        }
+        
+        public ActionResult StudentRegistration()
         public ActionResult Gallery()
         {
             List<Gallery_Tbl> gallery = home.getVideos();
@@ -47,9 +64,24 @@ namespace APSD.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool res = home.LoginData(Model);
+                Login_Tbl res = home.LoginData(Model);
 
-                return RedirectToAction("Index", "Login");
+                if (res.Type == "ADMIN")
+                {
+                    return RedirectToAction("Desboard", "Admin");
+
+                }
+                else if (res.Type == "USER")
+                {
+                    return RedirectToAction("USER", "Home");
+
+                }
+
+                else if (res== null)
+                {
+                    MessageBox.Show("Invalid UserName And Password !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
 
             return View();
@@ -70,7 +102,10 @@ namespace APSD.Controllers
             return RedirectToAction("Login");
            
         }
-
+        public ActionResult USER()
+        {
+            return View();
+        }
 
         public ActionResult Logout()
         {
